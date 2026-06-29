@@ -3,8 +3,8 @@
 A small, modular framework to measure how **susceptible** and **steerable** an
 LLM safety judge is, *beyond* its raw agreement with human labels.
 
-It accompanies the paper **"Safety is Contextual, LLM-Judges Are Not:
-Navigating the Rigid Priors of Evaluators"**.
+It accompanies the paper [**"Safety is Contextual, LLM-Judges Are Not:
+Navigating the Rigid Priors of Evaluators"**](https://arxiv.org/abs/2606.07874).
 
 This repo allows you to measure two key aspects of any judge or set of judges:
 
@@ -213,4 +213,18 @@ src/jss/
   plots.py             # notebook plotting helpers
   datasets.py          # NovelPrompts / SORRY-Bench / sports / custom loaders
 notebooks/analysis.ipynb
+```
+
+## Citation
+
+```
+@article{alloula2026safetycontextualllmjudgesnot,
+      title={Safety is Contextual, LLM-Judges Are Not: Navigating the Rigid Priors of Evaluators}, 
+      author={Anissa Alloula and Federico Licini and Ava Batchkala and Seraphina Goldfarb-Tarrant},
+      year={2026},
+      eprint={2606.07874},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2606.07874}, 
+}
 ```
