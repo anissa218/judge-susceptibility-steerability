@@ -8,11 +8,11 @@ Navigating the Rigid Priors of Evaluators"**](https://arxiv.org/abs/2606.07874).
 
 This repo allows you to measure two key aspects of any judge or set of judges:
 
-- **Susceptibility** — does a judge *use* in-context information? We test
+- **Susceptibility**: does a judge *use* in-context information? We test
   in-context **demonstrations** (correct and label-swapped/misleading) and, when
   a dataset provides it, **novel context** (i.e. additional task information, 
   correct and irrelevant).
-- **Steerability** — can a judge be pushed to a **different safety definition**?
+- **Steerability**: can a judge be pushed to a **different safety definition**?
   We give the judge modified policies (a stricter one, a swapped one, or none at
   all) and also reframe the task as an arbitrary **A/B classification**.
 
