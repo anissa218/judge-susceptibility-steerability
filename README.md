@@ -79,12 +79,12 @@ computes:
 
 - **accuracy** and **F1** vs the ground truth for that condition's
   definition (steerability accuracy is measured against the *new* safety policy),
-  with the **standard deviation across seeds** reported as error bars;
-- **flip rate** — the fraction of samples whose **majority-vote** prediction
+  along the **standard deviation across seeds**;
+- **flip rate**: the fraction of samples whose **majority-vote** prediction
   changes relative to the experiment's *base* condition;
-- **expected flip rate** (steerability only) — the fraction of samples whose
+- **expected flip rate** (steerability only): the fraction of samples whose
   *gold label* changes under the new definition, i.e. how much a perfectly
-  steerable judge *should* flip.
+  steerable judge *should* modify its predictions.
 
 For a given (judge, condition, seed), if >10% of outputs are unparseable 
 that seed is dropped; if 0–10%, unparseable outputs are counted as incorrect.
@@ -99,7 +99,7 @@ that seed is dropped; if 0–10%, unparseable outputs are counted as incorrect.
 | `steer_classification` | `cls_base` (base), `cls_strict`, `cls_swapped` (family-dependent) |
 
 Demonstrations are drawn from **4 rows held out** of the dataset (stratified
-2 safe / 2 unsafe); *misleading* demonstrationss have their labels swapped at render time.
+2 safe / 2 unsafe); *misleading* demonstrations have their labels swapped at render time.
 
 ### Safety definitions (the steerability "knobs")
 
@@ -127,7 +127,7 @@ families (see `src/jss/definitions.py`). The judge prompts live in `templates/`.
 | `custom`       | your CSV via `--data` | prompt / completion | see below |
 
 `--mode prompt` judges the user request; `--mode completion` judges the model
-response.
+response to the user request.
 
 ### Your own data
 
@@ -185,12 +185,12 @@ definitions and the A/B classification reframe are all generated automatically.
 ## Outputs & analysis
 
 Each run writes to `results/<dataset>__<mode>/`:
-- `predictions.csv` — one row per (judge, condition, seed, sample) with the raw
+- `predictions.csv`: one row per (judge, condition, seed, sample) with the raw
   judge output, parsed prediction, and re-derived gold.
-- `summary.csv` — per-condition accuracy/F1 (mean ± std), flip rate, expected flip.
+- `summary.csv`: per-experiment accuracy/F1 (mean ± std), flip rate, expected flip rate.
 
 `notebooks/analysis.ipynb` reads `summary.csv` and plots flip-rate and
-performance; set `RESULTS_DIR` to your run.
+performance for each judge; set `RESULTS_DIR` to your run.
 
 ---
 
