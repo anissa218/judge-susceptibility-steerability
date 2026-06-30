@@ -1,6 +1,6 @@
 # judge-susceptibility-steerability
 
-A small, modular framework to measure how **susceptible** and **steerable** an
+A small, lightweight framework to measure how **susceptible** and **steerable** an
 LLM safety judge is, *beyond* its raw agreement with human labels.
 
 It accompanies the paper [**"Safety is Contextual, LLM-Judges Are Not:
@@ -8,13 +8,14 @@ Navigating the Rigid Priors of Evaluators"**](https://arxiv.org/abs/2606.07874).
 
 This repo allows you to measure two key aspects of any judge or set of judges:
 
-- **Susceptibility**: does a judge *use* in-context information? We test
+- **Susceptibility**: does a judge *use* in-context information? We test the impact of
   in-context **demonstrations** (correct and label-swapped/misleading) and, when
   a dataset provides it, **novel context** (i.e. additional task information, 
   correct and irrelevant).
-- **Steerability**: can a judge be pushed to a **different safety definition**?
-  We give the judge modified policies (a stricter one, a swapped one, or none at
-  all) and also reframe the task as an arbitrary **A/B classification**.
+- **Steerability**: can a judge be pushed to evaluate w.r.t. a **different safety definition**?
+  We give the judge modified safety policies (a stricter one, a swapped one, or none at
+  all) and also reframe the evaluation task as an arbitrary **classification** task,
+  to see how this affects judging.
 
 You can run on three datasets used in the paper — **NovelPrompts**
 ([HF](https://huggingface.co/datasets/anissa218/novelprompts)), **SORRY-Bench**
