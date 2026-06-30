@@ -17,7 +17,7 @@ This repo allows you to measure two key aspects of any judge or set of judges:
   all) and also reframe the evaluation task as an arbitrary **classification** task,
   to see how this affects judging.
 
-You can run on three datasets used in the paper — **NovelPrompts**
+You can run on three datasets used in the paper, **NovelPrompts**
 ([HF](https://huggingface.co/datasets/anissa218/novelprompts)), **SORRY-Bench**
 ([HF](https://huggingface.co/datasets/sorry-bench/sorry-bench-202503), gated), and a synthetic **ball-sports** "absurd definition" set (in
 `data/`), or on **your own data**, with the built-in safety definitions **or your
